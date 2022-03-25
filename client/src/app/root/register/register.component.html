@@ -1,1 +1,95 @@
-<p>register works!</p>
+<!-- <div class="create-section">
+  <div class="product-form" *ngIf="!loading">
+    <form [formGroup]="productForm" (ngSubmit)="productSubmit(productForm)">
+      <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px">
+        <div ngClass.lt-md="mb-10" fxFlex="100">
+          <mat-form-field autofilled="false" class="form-field">
+            <input
+              type="text"
+              #Username
+              matInput
+              placeholder="Product Name*"
+              maxlength="50"
+              formControlName="ProductName"
+            />
+            <mat-hint
+              >{{ UserName.value.length }}/50 (minimum 3 character)</mat-hint
+            >
+            <mat-error *ngIf="productForm.get('Username').hasError('required')"
+              >Product name required</mat-error
+            >
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutGap="20px">
+        <div ngClass.lt-md="mb-10" fxFlex="100">
+          <button
+            class="submit-btn"
+            [disabled]="productForm.invalid"
+            mat-raised-button
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div> -->
+
+<div class="col-lg-6">
+  <form (ngSubmit)="onSubmit()" #registerForm="ngForm" novalidate>
+    <div class="container form-group">
+      <h1>Register</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr />
+
+      <label for="Username"><b>Username</b></label>
+      <input
+        type="text"
+        placeholder="Enter Username"
+        name="Username"
+        id="Username"
+        required
+      />
+
+      <label for="email"><b>Email</b></label>
+      <input
+        type="text"
+        placeholder="Enter Email"
+        name="Username"
+        id="Username"
+        required
+      />
+
+      <label for="Password"><b>Password</b></label>
+      <input
+        type="Password"
+        placeholder="Enter Password"
+        name="Password"
+        id="Password"
+        required
+      />
+
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input
+        type="password"
+        placeholder="Repeat Password"
+        name="psw-repeat"
+        id="psw-repeat"
+        required
+      />
+      <hr />
+
+      <p>
+        By creating an account you agree to our <a href="#">Terms & Privacy</a>.
+      </p>
+      <button type="submit" class="registerbtn">Register</button>
+    </div>
+
+    <div class="container signin">
+      <p>Already have an account? <a routerLink="/login">Sign in</a>.</p>
+    </div>
+  </form>
+</div>

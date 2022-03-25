@@ -7,8 +7,8 @@ import { MatProgressBarModule } from "@angular/material/progress-bar";
 import { MatMenuModule } from "@angular/material/menu";
 import { OverlayModule } from "@angular/cdk/overlay";
 import { MatButtonModule } from "@angular/material/button";
-// import { MyRegisterComponent } from "./register/register.component";
-// import { MyLoginComponent } from "./login/login.component";
+import { MyRegisterComponent } from "./register/register.component";
+import { MyLoginComponent } from "./login/login.component";
 
 const routes: Routes = [
   {
@@ -37,16 +37,16 @@ const routes: Routes = [
         loadChildren: () =>
           import("./my-cart/my-cart.module").then((m) => m.MyCartModule),
       },
-      // {
-      //   path: "register",
-      //   loadChildren: () =>
-      //     import("./registert/register.module").then((m) => m.RegisterModule),
-      // },
-      // {
-      //   path: "login",
-      //   loadChildren: () =>
-      //     import("./login/login.module").then((m) => m.LoginModule),
-      // },
+      {
+        path: "register",
+        loadChildren: () =>
+          import("./register/register.module").then((m) => m.RegisterModule),
+      },
+      {
+        path: "login",
+        loadChildren: () =>
+          import("./login/login.module").then((m) => m.LoginModule),
+      },
 
       { path: "**", redirectTo: "dashboard" },
     ],

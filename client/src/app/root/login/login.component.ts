@@ -9,4 +9,6 @@ export class MyLoginComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  onSubmit() {}
 }

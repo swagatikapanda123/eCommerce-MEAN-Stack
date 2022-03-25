@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const productRoute = require("./api/routes/products");
 const dictionaryRoute = require("./api/routes/dictionary");
 const cartRoute = require("./api/routes/carts");
+const userRoute = require("./api/routes/users");
 // const url = require('url');
 const axios = require("axios");
 const {
@@ -52,6 +53,7 @@ const PORT = process.env.PORT || 3000;
 app.use("/api/products", productRoute);
 app.use("/api/dictionary", dictionaryRoute);
 app.use("/api/cart", cartRoute);
+app.use("/api/user", userRoute);
 
 app.use("/test", (req, res, next) => {
   axios
