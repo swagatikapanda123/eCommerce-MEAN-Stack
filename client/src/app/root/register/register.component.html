@@ -55,7 +55,22 @@
         required
         #username="ngModel"
         [(ngModel)]="userDetails.UserName"
+        minlength="4"
+        appForbiddenName="bob"
       />
+
+      <div
+        *ngIf="username.invalid && (username.dirty || username.touched)"
+        class="alert"
+      >
+        <div *ngIf="username.errors?.['required']">Name is required.</div>
+        <div *ngIf="username.errors?.['minlength']">
+          Name must be at least 4 characters long.
+        </div>
+        <div *ngIf="username.errors?.['forbiddenName']">
+          Name cannot be Bob.
+        </div>
+      </div>
 
       <label for="email"><b>Email</b></label>
       <input
@@ -68,6 +83,12 @@
         #email="ngModel"
         [(ngModel)]="userDetails.Email"
       />
+      <div
+        *ngIf="email.invalid && (email.dirty || email.touched)"
+        class="alert"
+      >
+        <div *ngIf="email.errors?.['required']">Email is required.</div>
+      </div>
 
       <label for="Password"><b>Password</b></label>
       <input
@@ -79,7 +100,18 @@
         required
         #password="ngModel"
         [(ngModel)]="userDetails.Password"
+        minlength="4"
       />
+
+      <div
+        *ngIf="password.invalid && (password.dirty || password.touched)"
+        class="alert"
+      >
+        <div *ngIf="password.errors?.['required']">Password is required.</div>
+        <div *ngIf="password.errors?.['minlength']">
+          Password must be at least 4 characters long.
+        </div>
+      </div>
 
       <hr />
 
