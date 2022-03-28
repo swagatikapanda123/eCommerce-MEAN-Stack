@@ -47,39 +47,40 @@
 
       <label for="Username"><b>Username</b></label>
       <input
+        class="form-control"
         type="text"
         placeholder="Enter Username"
         name="Username"
         id="Username"
         required
+        #username="ngModel"
+        [(ngModel)]="userDetails.UserName"
       />
 
       <label for="email"><b>Email</b></label>
       <input
+        class="form-control"
         type="text"
         placeholder="Enter Email"
-        name="Username"
-        id="Username"
+        name="email"
+        id="email"
         required
+        #email="ngModel"
+        [(ngModel)]="userDetails.Email"
       />
 
       <label for="Password"><b>Password</b></label>
       <input
+        class="form-control"
         type="Password"
         placeholder="Enter Password"
         name="Password"
         id="Password"
         required
+        #password="ngModel"
+        [(ngModel)]="userDetails.Password"
       />
 
-      <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input
-        type="password"
-        placeholder="Repeat Password"
-        name="psw-repeat"
-        id="psw-repeat"
-        required
-      />
       <hr />
 
       <p>

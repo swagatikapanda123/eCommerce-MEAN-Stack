@@ -1,3 +1,4 @@
+import { HttpService } from "./../../shared/service/http.service";
 import { Component, OnInit } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
@@ -15,37 +16,17 @@ export class MyRegisterComponent implements OnInit {
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = "";
-  username: any;
 
-  //userModel = new User("user", "user@gmail.com", "user");
+  userDetails: any = {};
 
-  // registerForm = this.formBuilder.group({
-  //   username: "",
-  //   email: "",
-  //   password: "",
-  // });
-
-  constructor() {}
+  constructor(private http: HttpService) {}
 
   ngOnInit(): void {}
 
   onSubmit(): void {
-    //console.log(this.userModel);
-    // const { username, email, password } = this.form;
-    // console.log(username, email, password);
-    // this.register(username, email, password).subscribe({
-    //   next: (data) => {
-    //     console.log(data);
-    //     this.isSuccessful = true;
-    //     this.isSignUpFailed = false;
-    //   },
-    //   error: (err) => {
-    //     this.errorMessage = err.error.message;
-    //     this.isSignUpFailed = true;
-    //   },
-    // });
-  }
-  setname() {
-    console.log(this.username);
+    console.log(this.userDetails);
+    this.http.post("user/register", this.userDetails).subscribe((res) => {
+      console.log(res);
+    });
   }
 }

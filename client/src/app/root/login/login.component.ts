@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpService } from "./../../shared/service/http.service";
 
 @Component({
   selector: "app-login",
@@ -6,9 +8,16 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./login.component.scss"],
 })
 export class MyLoginComponent implements OnInit {
-  constructor() {}
+  userDetails: any = {};
+  constructor(private http: HttpService) {}
 
   ngOnInit(): void {}
 
-  onSubmit() {}
+  onSubmit() {
+    console.log(this.userDetails);
+
+    this.http.post("user/login", this.userDetails).subscribe((res) => {
+      console.log(res);
+    });
+  }
 }

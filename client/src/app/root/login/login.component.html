@@ -12,6 +12,8 @@
         name="Username"
         id="Username"
         required
+        #email="ngModel"
+        [(ngModel)]="userDetails.Email"
       />
 
       <label for="Password"><b>Password</b></label>
@@ -21,6 +23,8 @@
         name="Password"
         id="Password"
         required
+        #password="ngModel"
+        [(ngModel)]="userDetails.Password"
       />
 
       <button type="submit" class="registerbtn">Login</button>

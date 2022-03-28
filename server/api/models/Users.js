@@ -26,7 +26,7 @@ const usersSchema = new Schema(
       trim: String,
       required: [true, "Password cannot be blank."],
       minlength: [3, "Must be at least 3 characters."],
-      maxlength: [10, "Must be at most 10 characters"],
+      // maxlength: [10, "Must be at most 10 characters"],
     },
 
     createdAt: { type: Date, default: Date.now },
